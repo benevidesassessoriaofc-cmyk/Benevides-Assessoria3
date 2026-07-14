@@ -25,7 +25,7 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Benevides Assessoria",
-  "image": "[EDITAR: URL do logo]",
+  "image": "https://www.benevidesassessoria.com.br/img/logo-completo.png",
   "description": "Assessoria e suporte administrativo para MEI, MEI caminhoneiro, autônomos e pequenos negócios.",
   "address": {
     "@type": "PostalAddress",
@@ -34,11 +34,10 @@
     "addressCountry": "BR"
   },
   "telephone": "+55 69 99942-0461",
-  "email": "[EDITAR: e-mail de contato]",
+  "email": "benevides.assessoriaofc@gmail.com",
   "areaServed": "Porto Velho - RO",
   "sameAs": [
-    "[EDITAR: link Instagram]",
-    "[EDITAR: link Facebook]"
+    "https://instagram.com/benevides.assessoriaofc"
   ]
 }
 </script>
@@ -49,18 +48,18 @@
 
 <style>
   :root{
-    --ink:#17211f;
-    --navy:#153744;
-    --navy-deep:#0e2731;
-    --paper:#f6f2e8;
-    --paper-2:#efe9db;
-    --off-white:#fffdf8;
-    --gold:#c68a2e;
-    --gold-soft:#e3b567;
-    --green:#3c6b57;
-    --green-deep:#294a3d;
-    --line:#d8cfba;
-    --line-dark:rgba(246,242,232,0.18);
+    --ink:#1c1a1a;
+    --navy:#201d1d;
+    --navy-deep:#141212;
+    --paper:#f7f5f2;
+    --paper-2:#efece7;
+    --off-white:#fffdfb;
+    --gold:#901819;
+    --gold-soft:#b8555a;
+    --green:#901819;
+    --green-deep:#5d0f10;
+    --line:#ddd6d0;
+    --line-dark:rgba(247,245,242,0.16);
 
     --display: "Zilla Slab", serif;
     --body: "Inter", sans-serif;
@@ -139,17 +138,15 @@
     color:var(--off-white);
   }
   .brand-mark{
-    width:38px; height:38px;
-    border-radius:50%;
-    border:1.5px solid var(--gold-soft);
+    width:42px; height:42px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-family:var(--display);
-    font-weight:600;
-    font-size:17px;
-    color:var(--gold-soft);
     flex-shrink:0;
+  }
+  .brand-mark img{
+    width:100%; height:100%;
+    object-fit:contain;
   }
   .brand-name{
     font-family:var(--display);
@@ -268,7 +265,7 @@
     color:rgba(246,242,232,0.75);
   }
 
-  /* Selo/carimbo — elemento assinatura */
+  /* Foto institucional — elemento assinatura */
   .seal-wrap{
     position:relative;
     display:flex;
@@ -279,38 +276,38 @@
     height:auto;
     padding:32px 0;
   }
-  .seal{
-    width:280px; height:280px;
+  .photo-frame{
+    width:280px;
+    aspect-ratio:4/5;
     position:relative;
+    border:1px solid var(--gold-soft);
+    border-radius:4px;
+    padding:10px;
   }
-  .seal svg{ width:100%; height:100%; }
-  .seal-ring-text{
-    animation:spin 34s linear infinite;
-    transform-origin:150px 150px;
-  }
-  @keyframes spin{ to{ transform:rotate(360deg); } }
-  .seal-core{
+  .photo-frame::before,
+  .photo-frame::after{
+    content:"";
     position:absolute;
-    inset:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-    text-align:center;
+    width:22px; height:22px;
+    border:1.5px solid var(--gold-soft);
   }
-  .seal-core .num{
-    font-family:var(--mono);
-    font-size:9.5px;
-    color:var(--gold-soft);
-    letter-spacing:0.06em;
+  .photo-frame::before{
+    top:-1px; left:-1px;
+    border-right:none; border-bottom:none;
   }
-  .seal-core .label{
-    font-family:var(--display);
-    font-size:15px;
-    line-height:1.3;
-    color:var(--off-white);
-    margin-top:5px;
-    max-width:112px;
+  .photo-frame::after{
+    bottom:-1px; right:-1px;
+    border-left:none; border-top:none;
+  }
+  .photo-frame-inner{
+    width:100%; height:100%;
+    overflow:hidden;
+    border-radius:2px;
+  }
+  .photo-frame-inner img{
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
   }
   .seal-badges{
     display:flex;
@@ -611,7 +608,7 @@
 <header>
   <div class="nav">
     <a href="#topo" class="brand">
-      <span class="brand-mark">B</span>
+      <span class="brand-mark"><img src="img/logo-icon.png" alt="Benevides Assessoria"></span>
       <span class="brand-name">Benevides Assessoria
         <small>Porto Velho · RO</small>
       </span>
@@ -647,26 +644,9 @@
     </div>
 
     <div class="seal-wrap">
-      <div class="seal">
-        <svg viewBox="0 0 300 300">
-          <g class="seal-ring-text">
-            <defs>
-              <path id="circlePath" d="M 150,150 m -132,0 a 132,132 0 1,1 264,0 a 132,132 0 1,1 -264,0"/>
-            </defs>
-            <text fill="#e3b567" font-family="JetBrains Mono, monospace" font-size="10.5" letter-spacing="3">
-              <textPath href="#circlePath" startOffset="0%">
-                BENEVIDES ASSESSORIA · PORTO VELHO RO · SUPORTE ADMINISTRATIVO ·
-              </textPath>
-            </text>
-          </g>
-          <circle cx="150" cy="150" r="112" fill="none" stroke="#e3b567" stroke-width="1"/>
-          <circle cx="150" cy="150" r="105" fill="none" stroke="#e3b567" stroke-width="1" stroke-dasharray="2 4"/>
-          <circle cx="150" cy="150" r="90" fill="#0e2731"/>
-          <circle cx="150" cy="150" r="90" fill="none" stroke="#e3b567" stroke-width="1" stroke-opacity="0.5"/>
-        </svg>
-        <div class="seal-core">
-          <span class="num">EST. PORTO VELHO — RO</span>
-          <span class="label">Benevides<br>Assessoria</span>
+      <div class="photo-frame">
+        <div class="photo-frame-inner">
+          <img src="img/foto-empresario.jpg" alt="Responsável pela Benevides Assessoria">
         </div>
       </div>
       <div class="seal-badges">
@@ -804,11 +784,11 @@
           </li>
           <li>
             <span class="k">E-MAIL</span>
-            <span class="v editable">[EDITAR: e-mail@benevidesassessoria.com.br]</span>
+            <span class="v"><a href="mailto:benevides.assessoriaofc@gmail.com">benevides.assessoriaofc@gmail.com</a></span>
           </li>
           <li>
             <span class="k">REDES SOCIAIS</span>
-            <span class="v editable">[EDITAR: @instagram] · [EDITAR: /facebook]</span>
+            <span class="v"><a href="https://instagram.com/benevides.assessoriaofc" target="_blank" rel="noopener">@benevides.assessoriaofc</a></span>
           </li>
         </ul>
       </div>
